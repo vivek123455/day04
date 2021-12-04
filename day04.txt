@@ -1,0 +1,50 @@
+1.How to compare two JSON have the same properties without order?
+a.var obj1 = { name: "Person 1", age:5 };
+b.var obj2 = { age:5, name: "Person 1" };
+Ans: Lodash isEqual() method is the best way to compare two json
+     object.This will not consider the order of keys in object
+     and check for the equality of object.
+        
+var obj1 = {"name":"person1",age:5};
+var obj2 = {age:5,"name":"person1"};
+var flag = true;
+if(object.keys(obj1).length==object.keys(obj2).length){
+    for(key in obj1){
+        if(obj1[key]==obj2[key]){
+            continue;
+        }
+        else{
+            flag=false;
+            break;
+        }
+    }
+}
+else{
+    flag=false;
+}
+console.log("is object equal"+flag);
+
+
+2.Use the rest countries API url -> https://restcountries.eu/rest/v2/all and display all the country flags in console
+3.Use the same rest countries and print all countries name, region, sub region and population
+Ans:  const  countriesList=
+      document.getElementById("countries");
+      Let countries;
+      fetch("https://restcountries.eu/rest/v2/all")
+      .then(res = res.json())
+      .then(data = initialize(data))
+      .catch(err=console.log("error:",err);
+       
+        function initialize({
+         name,
+         region,
+         subregion,
+         population
+         }) {
+        console.log({
+         name,
+         region,
+         subregion,
+         population
+        })
+       }
